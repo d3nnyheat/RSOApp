@@ -1,0 +1,69 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RSOApp.MembersForm"
+        Title="Члены организации"
+        Icon="/Assets/rso.ico"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Content="Члены организации" FontSize="20" FontFamily="Arial" HorizontalContentAlignment="Center"></Label>
+        <DataGrid Name="MemberGrid" x:CompileBindings="False" Margin ="10 20 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Индентификатор отряда" Binding="{Binding ID_Squad}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по фамилии: </TextBlock>
+                <TextBox Name="Search2" Width="200" Margin ="65 10 0 0"></TextBox>
+                <TextBlock VerticalAlignment="Center"
+                           x:Name="FilterNum" Margin ="10 10 0 0">Фильтрация по ID </TextBlock>
+                <ComboBox Name="FiltrComboBox" Width="200" Margin ="10 10 0 0" 
+                          x:CompileBindings="False"
+                          SelectionChanged="FiltrTable_OnSelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ID}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel> 
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по имени: </TextBlock>
+                    <TextBox Name="Search1" Width="200" Margin ="33 10 0 0"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="10 13 10 10">
+                        <Button Name="SearchButton" Content="Поиск по двум полям" Click="Search_OnClick"></Button>
+                    </StackPanel>
+                    <StackPanel Margin="300 13 10 10">
+                        <Button Name="Reset" Content="Обновить таблицу" Click="ResetTable_OnClick"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel> 
+    </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10 12 00 0">
+                <Button Name="Add" Content="Добавить данные" Click="AddData"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Name="Update" Content="Изменить данные" Click="EditData"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Name="Delete" Content="Удалить данные" Click="DeleteData"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="10 20 10 10">
+            <Button Name="BackButton" Content="Вернуться к меню" Click="BackToMenu"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

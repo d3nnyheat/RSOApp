@@ -1,0 +1,35 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RSOApp.MainMenu"
+        Title="Главное меню"
+        Icon="/Assets/rso.ico"
+        WindowStartupLocation="CenterScreen"
+        Width="470"
+        Height="175">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin=" 10 10 0 0">
+                <Button Name="MembersButton" Content="Члены организации" Click="MembersButton_OnClick"></Button></StackPanel>
+            <StackPanel Orientation="Vertical" Margin=" 10 10 0 0">
+                <Button Name="CatalogButton" Content="Каталог атрибутики" Click="MembersButton_OnClick"></Button></StackPanel>
+            <StackPanel Orientation="Horizontal" Margin=" 10 10 0 0">
+                <Button Name="StaffButton" Content="Сотрудники" Click="MembersButton_OnClick"></Button></StackPanel>
+            <StackPanel Orientation="Vertical" Margin=" 10 10 0 0">
+                <Button Name="OrdersButton" Content="Заказы" Click="MembersButton_OnClick"></Button></StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" >
+            <StackPanel Margin=" 200 10 0 0">
+                <Button Name="SquadButton" Content="Список отрядов" Click="MembersButton_OnClick"></Button>
+            </StackPanel>
+            <StackPanel Margin=" 200 10 0 0">
+                <Button Name="Procedures" Content="Награждённые" Click="MembersButton_OnClick"></Button>
+            </StackPanel>
+            <StackPanel Margin=" 310 50 0 0">
+                <Button Name="Logon" Content="Выход из системы" Click="Logon_OnClick"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
